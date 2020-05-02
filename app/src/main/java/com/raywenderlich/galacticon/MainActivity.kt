@@ -23,14 +23,14 @@
 package com.raywenderlich.galacticon
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.GridLayoutManager
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.helper.ItemTouchHelper
+
 import android.view.Menu
 import android.view.MenuItem
-import com.raywenderlich.galacticon.R.id.recyclerView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.ItemTouchHelper
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.IOException
 import java.util.*
@@ -105,9 +105,9 @@ class MainActivity : AppCompatActivity(), ImageRequester.ImageRequesterResponse 
 
   private fun setRecyclerViewScrollListener() {
     recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-      override fun onScrollStateChanged(recyclerView: RecyclerView?, newState: Int) {
+      override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
         super.onScrollStateChanged(recyclerView, newState)
-        val totalItemCount = recyclerView!!.layoutManager.itemCount
+        val totalItemCount = recyclerView.layoutManager?.itemCount
         if (!imageRequester.isLoadingData && totalItemCount == lastVisibleItemPosition + 1) {
           requestPhoto()
         }
@@ -128,7 +128,7 @@ class MainActivity : AppCompatActivity(), ImageRequester.ImageRequesterResponse 
         //3
         val position = viewHolder.adapterPosition
         photosList.removeAt(position)
-        recyclerView.adapter.notifyItemRemoved(position)
+        recyclerView.adapter?.notifyItemRemoved(position)
       }
     }
 

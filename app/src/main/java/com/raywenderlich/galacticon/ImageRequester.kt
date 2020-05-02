@@ -22,7 +22,7 @@
 
 package com.raywenderlich.galacticon
 
-import android.app.Activity
+import androidx.appcompat.app.AppCompatActivity
 import android.content.Context
 import android.net.Uri.Builder
 import okhttp3.*
@@ -32,7 +32,7 @@ import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
 
-class ImageRequester(listeningActivity: Activity) {
+class ImageRequester(listeningActivity: AppCompatActivity) {
 
   interface ImageRequesterResponse {
     fun receivedNewPhoto(newPhoto: Photo)
@@ -76,7 +76,7 @@ class ImageRequester(listeningActivity: Activity) {
       override fun onResponse(call: Call, response: Response) {
 
         try {
-          val photoJSON = JSONObject(response.body()!!.string())
+          val photoJSON = JSONObject(response.body!!.string())
 
           calendar.add(Calendar.DAY_OF_YEAR, -1)
 

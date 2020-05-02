@@ -23,7 +23,7 @@
 package com.raywenderlich.galacticon
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_photo.*
 
@@ -37,7 +37,7 @@ class PhotoActivity : AppCompatActivity() {
     setContentView(R.layout.activity_photo)
 
     selectedPhoto = intent.getSerializableExtra(PHOTO_KEY) as Photo
-    Picasso.with(this).load(selectedPhoto?.url).into(photoImageView)
+    Picasso.get().load(selectedPhoto?.url).into(photoImageView)
 
     photoDescription?.text = selectedPhoto?.explanation
   }
