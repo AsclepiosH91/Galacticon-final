@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Galacticon-final.iml" filepath="$PROJECT_DIR$/Galacticon-final.iml" group="Galacticon-final" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="Galacticon-final/app" />
+      <module fileurl="file://$PROJECT_DIR$/Galacticon-final.iml" filepath="$PROJECT_DIR$/Galacticon-final.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Galacticon-final.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Galacticon-final.app.iml" />
     </modules>
   </component>
 </project>
